@@ -9,8 +9,10 @@ const useStyles = makeStyles((theme) => ({
  	   backgroundImage: "linear-gradient(45deg, rgba(255,162,227,0.77) 0%, rgba(166,193,238,0.5) 100%)",
     },
 }))
-
-export const Appbar = ({setMenuOpen}) => {
+interface IAppbar {
+	setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+export const Appbar = ({setMenuOpen}:IAppbar) => {
     const [ref, {width, height}]= useMeasure()
     const classes = useStyles()
     return (
